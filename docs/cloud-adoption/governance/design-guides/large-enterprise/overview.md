@@ -50,8 +50,6 @@ Once this MVP has been deployed, additional layers of governance can be quickly 
 
 <!-- markdownlint-disable MD026 -->
 
-<!-- markdownlint-disable MD026 -->
-
 ## What does this best practice do?
 
 In the MVP, practices and tools from the [Deployment Acceleration]((../../configuration-management/overview.md)) discipline are established to quickly apply corporate policy. In particular, the MVP makes use of Azure Blueprints, Azure Management Groups, and Azure Policy to apply a few basic corporate policies, as defined in the narrative for this fictional company. Those corporate policies are applied using Resource Manager templates and Azure policies to establish a very small baseline for identity and security.
