@@ -42,6 +42,21 @@
           "**/obj/**",
           "**/_themes/**"
         ]
+      },
+      {
+        "files": [
+          "includes/**/*.svg",
+          "includes/**/*.png",
+          "includes/**/*.jpg",
+          "includes/**/*.jpeg",
+          "includes/**/*.gif"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/_themes/**"
+        ],
+        "src": null,
+        "dest": null
       }
     ],
     "overwrite": [],
