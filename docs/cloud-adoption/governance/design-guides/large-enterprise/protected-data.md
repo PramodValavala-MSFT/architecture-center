@@ -64,7 +64,7 @@ This business risk can be expanded into a few technical risks:
 The following changes to policy will help mitigate the new risks and guide implementation. The list looks long, but the adoption of these policies may be easier than it would appear.
 
 1. All deployed assets must be categorized by criticality and data classification. Classifications are to be reviewed by the Cloud Governance team and the application before deployment to the cloud.
-2. Applications that store or access protected data are to be managed differently than those that don’t. At a minimum, they should be segmented to avoid unintended access of protected data. 
+2. Applications that store or access protected data are to be managed differently than those that don’t. At a minimum, they should be segmented to avoid unintended access of protected data.
 3. All protected data must be encrypted when at rest.
 4. Elevated permissions in any segment containing protected data should be an exception. Any such exceptions will be recorded with the Cloud Governance team and audited regularly.
 5. Network subnets containing protected data must be isolated from any other subnets. Network traffic between protected data subnets will be audited regularly.
@@ -91,11 +91,11 @@ This section of the article will evolve the Governance MVP design to include new
 
 The new best practices fall into two categories: Corporate IT (Hub) and Cloud Adoption (Spoke).
 
-**Establishing a corporate IT hub/spoke subscription to centralize the security baseline**: In this best practice, the existing governance capacity is wrapped by a [Hub Spoke Topology with Shared Services](../../../../reference-architectures/hybrid-networking/shared-services.md), with a few key additions from the Cloud Governance team.
+**Establishing a corporate IT hub/spoke subscription to centralize the security baseline**: In this best practice, the existing governance capacity is wrapped by a [Hub Spoke Topology with Shared Services][shared-services], with a few key additions from the Cloud Governance team.
 
 1. Azure DevOps repository. Create a repository in Azure DevOps to store and version all relevant Azure Resource Manager templates and scripted configurations
 2. Hub-Spoke template.
-    1. The guidance in the [Hub-Spoke with Shared Services Reference Architecture](../../../../reference-architectures/hybrid-networking/shared-services.md) can be used to generate Azure Resource Manager Templates for the assets required in a corporate IT hub.
+    1. The guidance in the [Hub-Spoke with Shared Services Reference Architecture][shared-services] can be used to generate Azure Resource Manager Templates for the assets required in a corporate IT hub.
     2. Using those templates, this structure can be made repeatable, as part of a central governance strategy.
     3. In addition to the current reference architecture, it is advised that a Network Security Group (NSG) template should be created capturing any port blocking or whitelisting requirements for the VNet to host the firewall. This NSG will differ from prior NSGs, because it will be the first NSG to allow public traffic into a VNet.
 3. Create Azure Policies. Create an Azure Policy named "Hub NSG enforcement" to enforce the configuration of the NSG assigned to any VNet created in this subscription. Apply the built-in Policies for guest configuration as follows:
@@ -120,7 +120,7 @@ The new best practices fall into two categories: Corporate IT (Hub) and Cloud Ad
 In prior evolutions of the best practice, NSGs were defined which blocked public traffic and whitelisted internal traffic. Additionally, the Azure Blueprint temporarily created DMZ and Active Directory capabilities. In this evolution, we will tweak those assets a bit, creating a new version of the Azure Blueprint.
 
 1. Network Peering Template. This template will peer the VNet in each subscription with the Hub VNet in the Corporate IT subscription.
-    1. The guidance from the prior section, [Hub-Spoke with Shared Services Reference Architecture](../../../../architecture/reference-architectures/hybrid-networking/shared-services.md) generated a Resource Manager template for enabling VNet peering.
+    1. The guidance from the prior section, [Hub-Spoke with Shared Services Reference Architecture][shared-services] generated a Resource Manager template for enabling VNet peering.
     2. That template can be used as a guide to modify the DMZ template from the prior governance evolution.
     3. Essentially, we are now adding VNet peering to the DMZ VNet that was previously connected to the local edge device over VPN. 
     4. *** It is also advised that the VPN should be removed from this template as well to ensure no traffic is routed directly to the on-premises datacenter, without passing through the Corporate IT Subscription and Firewall solution.
@@ -164,3 +164,7 @@ As cloud adoption continues to evolve and deliver additional business value, ris
 
 > [!div class="nextstepaction"]
 > [Resource consistency evolution](./mission-critical.md)
+
+<!-- links -->
+
+[shared-services]: ../../../../reference-architectures/hybrid-networking/shared-services.md
