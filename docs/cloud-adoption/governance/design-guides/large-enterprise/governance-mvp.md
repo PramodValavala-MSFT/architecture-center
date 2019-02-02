@@ -11,70 +11,9 @@ The following outlines the implementation of the initial Corporate Policies for 
 
 The core of this governance MVP is the [Deployment Acceleration](../../configuration-management/overview.md) discipline. The tools and patterns applied at this stage will enable the incremental evolutions needed to expand governance in the future.
 
-## Governance MVP (Cloud Adoption Foundation)
+[!INCLUDE [governance-mvp](../../../../../includes/cloud-adoption/governance/governance-mvp.md)]
 
-Rapid adoption of governance and corporate policy is achievable, thanks to a few simple principles and cloud-based governance tooling. These are the first of the three Cloud Governance Disciplines to approach in any governance process. Each will be expanded upon in this article. 
-
-To establish the starting point, this article will discuss the high-level strategies of Identity Baseline, Security Baseline, and Deployment Acceleration that are required to create a governance MVP that serves as the foundation for all cloud adoption.
-
-![Example of Incremental Governance MVP](../../../_images/governance/governance-mvp.png)
-
-## Implementation process 
-
-Implementation of the governance MVP has dependencies on Identity, Security, and Networking. Once the dependencies are resolved, the Cloud Governance team will make decisions regarding a few aspects of governance. Decisions from both the Cloud Governance team and other supporting teams will be implemented through a single package of enforcement assets.
-
-![Example of Incremental Governance MVP](../../../_images/governance/governance-mvp-implementation-flow.png)
-
-This implementation follows a simple checklist.
-
-1. Solicit decisions regarding core dependencies: Identity, Network, and Encryption.
-2. Determine the pattern to be used during Corporate Policy Enforcement.
-3. Determine appropriate governance patterns for Resource Grouping, Resource Tagging, Logging and Reporting.
-4. Implement the governance tools that map to the chosen policy enforcement pattern to apply the dependent decisions and governance decisions.
-
-## Dependent decisions
-
-The following decisions come from teams outside of the Cloud Governance team. The implementation of each will come from those same teams. However, the Cloud Governance team is responsible for implementing a solution to validate that those implementations are consistently applied.
-
-### Identity Baseline
-
-Identity Baseline is the fundamental starting point for all governance. Identity must be established before applying governance. The established identity strategy is then enforced by the governance solutions.
-
-In this governance journey, the Identity Baseline team implements the Replication pattern: 
-
-- RBAC will be provided by Azure Active Directory (Azure AD), using the directory synchronization or "same sign-on" that was implemented during company’s migration to Office 365. For implementation guidance, see [Reference Architecture for Azure AD Integration](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/identity/azure-ad).
-- The Azure AD tenant will also govern authentication and access for assets deployed to Azure.
-
-For the governance MVP, the Cloud Governance team will enforce application of the replicated tenant through subscription governance tooling, discussed later in this article. In future evolutions, the governance team may also enforce rich tooling in Azure AD to extend this capability.
-
-### Security baseline: Networking
-
-A Software Defined Network (SDN) is an important initial aspect of the Security Baseline. Establishing the governance MVP is dependent on early decisions from the Security Baseline team to define how networks can be safely configured. 
-
-Given the lack of requirements, IT security is playing it safe and has required a **Cloud DMZ** Pattern. That means governance of the Azure deployments themselves will be very light.
-
-- Azure subscriptions may connect to an existing datacenter via VPN but must follow all existing on-premises IT governance policies regarding connection of a demilitarized zone to protected resources. For implementation guidance regarding VPN connectivity, see [VPN Reference Architecture](https://review.docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/vpn).
-- Decisions regarding subnet, firewall, and routing are currently being deferred to each application/workload lead.
-- Additional analysis is required before releasing any protected data or mission-critical workloads.
-
-In this pattern, cloud networks can only connect to on-premises resources over an existing VPN that is compatible with Azure. Traffic over that connection will be treated like any traffic coming from a demilitarized zone. Additional considerations may be required on the on-premises edge device to securely handle traffic from Azure.
-
-The Cloud Governance team has proactively invited members of the networking and IT security teams to regular meetings, so they can stay ahead of networking demands and risks.
-
-### Security baseline: Encryption
-
-Encryption is another fundamental decision within the Security Baseline discipline. Because the company currently does not store any protected data in the cloud, the Security team has decided on a less aggressive pattern for encryption.
-
-At this point, a **Cloud Native** pattern to encryption is suggested but not required of any development team.
-
-- No governance requirements have been set regarding the use of encryption, because the current corporate policy does not permit mission-critical or protected data in the cloud.
-- Additional analysis will be required before releasing any protected data or mission-critical workloads.
-
-## Implementing the Deployment Acceleration discipline
-
-The core of this governance MVP is Deployment Acceleration. The tools and patterns applied at this stage will enable the incremental evolutions needed to expand governance in the future.
-
-### Policy enforcement
+## Policy enforcement
 
 The first decision to make regarding Deployment Acceleration is the pattern for enforcement. In this narrative, the Cloud Governance team decided to implement the **Automated Enforcement** pattern.
 
@@ -84,7 +23,7 @@ The first decision to make regarding Deployment Acceleration is the pattern for 
 - Although Azure Management Groups are being used, a relatively simple hierarchy is expected.
 - Azure Blueprints will be used to deploy and update subscriptions by applying RBAC requirements, Azure Resource Manager templates, and Azure Policy across management groups.
 
-### Application of Dependent Patterns
+## Applying the dependent patterns
 
 The following decisions represent the patterns to be enforced through the Policy Enforcement strategy above:
 
