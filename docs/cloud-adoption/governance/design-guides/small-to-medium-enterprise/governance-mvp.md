@@ -7,15 +7,15 @@ ms.date: 2/1/2019
 
 # Fusion: Small to Medium Enterprise – Additional technical details regarding the Governance MVP
 
-The following outlines the implementation of the initial Corporate Policies for this Governance Journey, to support the initial narrative. Before implementation it is advised that the reader review, modify, and integrate those artifacts into decision making processes.
+This article outlines the implementation of the initial corporate policies for this governance journey. Those policies are described in the previous article, [Initial corporate policy behind the governance strategy](.corporate-policy.md). Before implementation, it is advised that the reader review, modify, and integrate those artifacts into decision making processes.
 
-The core of this governance MVP is the [Deployment Acceleration](../../configuration-management/overview.md) discipline. The tools and patterns applied at this stage will enable the incremental evolutions needed to expand governance in the future.
+The core of this governance minimum viable product (MVP) is the [Deployment Acceleration](../../configuration-management/overview.md) discipline. The tools and patterns applied at this stage will enable the incremental evolutions needed to expand governance in the future.
 
 ## Governance MVP (Cloud Adoption Foundation)
 
-Rapid adoption of governance and corporate policy is achievable, thanks to a few simple principles and cloud-based governance tooling. These are the first of the three Cloud Governance Disciplines to approach in any governance process. Each will be expanded upon in this article. 
+Rapid adoption of governance and corporate policy is achievable, thanks to a few simple principles and cloud-based governance tooling. These are the first of the three Cloud Governance Disciplines to approach in any governance process. Each will be expanded upon in this article.
 
-To establish the starting point, this article will discuss the high-level strategies behind Identity Baseline, Security Baseline, and Deployment Acceleration that are required to create a Governance MVP (Minimum Viable Product), which will serve as the foundation for all adoption.
+To establish the starting point, this article will discuss the high-level strategies behind Identity Baseline, Security Baseline, and Deployment Acceleration that are required to create a Governance MVP, which will serve as the foundation for all adoption.
 
 ![Example of Incremental Governance MVP](../../../_images/governance/governance-mvp.png)
 
@@ -25,18 +25,18 @@ The implementation of the governance MVP has dependencies on Identity, Security,
 
 ![Example of Incremental Governance MVP](../../../_images/governance/governance-mvp-implementation-flow.png)
 
-This implementation can also be described using a simple checklist.
+This implementation can also be described using a simple checklist:
 
 1. Solicit decisions regarding core dependencies: Identity, Network, and Encryption.
-2. Determine pattern to be used during Corporate Policy Enforcement
-3. Determine appropriate governance patterns: Resource Consistency, Resource Tagging, Log & Reporting
+2. Determine the pattern to be used during corporate policy enforcement.
+3. Determine the appropriate governance patterns for the Resource Consistency, Resource Tagging, and Loging and Reporting disciplines.
 4. Implement the governance tools aligned to the chosen policy enforcement pattern to apply the dependent decisions and governance decisions.
 
 ## Dependent decisions
 
-The following decisions come from teams outside of the Cloud Governance Team. The implementation of each will come from those same teams. However, the Cloud Governance Team is responsible for implementing a solution to validate that those implementations are consistently applied.
+The following decisions come from teams outside of the Cloud Governance team. The implementation of each will come from those same teams. However, the Cloud Governance team is responsible for implementing a solution to validate that those implementations are consistently applied.
 
-### Identity baseline
+### Identity Baseline
 
 Identity Baseline is the fundamental starting point for all governance. Before attempting to apply governance, identity must be established. The established identity strategy will then be enforced by the governance solutions.
 In this governance journey, the Identity Management team implements the **Directory Synchronization** pattern: 
@@ -46,11 +46,11 @@ In this governance journey, the Identity Management team implements the **Direct
 
 In the governance MVP, the governance team will enforce application of the replicated tenant through subscription governance tooling, discussed [later in this article](#subscription-model). In future evolutions, the governance team could also enforce rich tooling in Azure AD to extend this capability.
 
-### Security baseline: Networking
+### Security Baseline: Networking
 
-Software Defined Network is an important initial aspect of the Security Baseline. Establishing the governance MVP depends on early decisions from the Security Management team to define how networks can be safely configured. 
+Software Defined Network is an important initial aspect of the Security Baseline. Establishing the governance MVP depends on early decisions from the Security Management team to define how networks can be safely configured.
 
-Given the lack of requirements, IT security is playing it safe and has required a **Cloud DMZ** Pattern. That means governance of the Azure deployments themselves will be very light. 
+Given the lack of requirements, IT security is playing it safe and has required a **Cloud DMZ** Pattern. That means governance of the Azure deployments themselves will be very light.
 
 - Azure subscriptions may connect to an existing data center via VPN, but must follow all existing on-premises IT governance policies regarding connection of a demilitarized zone to protected resources. For implementation guidance regarding VPN connectivity, see [VPN Reference Architecture](https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/vpn).
 - Decisions regarding subnet, firewall, and routing are currently being deferred to each application/workload lead.
@@ -58,9 +58,9 @@ Given the lack of requirements, IT security is playing it safe and has required 
 
 In this pattern, cloud networks can only connect to on-premises resources over a pre-allocated VPN that is compatible with Azure. Traffic over that connection will be treated like any traffic coming from a demilitarized zone. Additional considerations may be required on the on-premises edge device to securely handle traffic from Azure.
 
-The Cloud Governance Team has proactively invited members of the networking and IT security teams to regular meetings, in order to stay ahead of networking demands and risks.
+The Cloud Governance team has proactively invited members of the networking and IT security teams to regular meetings, in order to stay ahead of networking demands and risks.
 
-### Security baseline: Encryption
+### Security Baseline: Encryption
 
 Encryption is another fundamental decision within the Security Baseline discipline. Because the company currently does not yet store any protected data in the cloud, the Security Team has decided on a less aggressive pattern for encryption.
 At this point, a **Cloud Native** pattern to encryption is suggested but not required of any development team.
@@ -82,11 +82,11 @@ The first decision to make regarding Deployment Acceleration is the pattern for 
 
 The following decisions represent the patterns to be enforced through the policy enforcement strategy above:
 
-**Identity baseline**. Azure Blueprints will set RBAC requirements at a subscription level to ensure that consistent identity is configured for all subscriptions.
+**Identity Baseline**. Azure Blueprints will set RBAC requirements at a subscription level to ensure that consistent identity is configured for all subscriptions.
 
-**Security baseline: Networking**. The Cloud Governance team maintains a Resource Manager template for establishing a VPN gateway between Azure and the on-prem VPN device. When an application team requires a VPN connection, the Cloud Governance team will apply the gateway Resource Manager template via Azure Blueprints.
+**Security Baseline: Networking**. The Cloud Governance team maintains a Resource Manager template for establishing a VPN gateway between Azure and the on-prem VPN device. When an application team requires a VPN connection, the Cloud Governance team will apply the gateway Resource Manager template via Azure Blueprints.
 
-**Security baseline: Encryption**. At this point in the journey, no policy enforcement is required in this area. This will be revisited during later evolutions. 
+**Security Baseline: Encryption**. At this point in the journey, no policy enforcement is required in this area. This will be revisited during later evolutions. 
 
 ## Application of governance-defined patterns
 
@@ -104,7 +104,7 @@ The **Application Category** pattern has been chosen for Azure subscriptions.
 
 ### Resource Consistency
 
-**Deployment Consistency** has been chosen as a resource consistency pattern.
+The **Deployment Consistency** pattern has been chosen as a resource consistency.
 
 - Resource groups are created for each application. Management groups are created for each application archetype. Azure Policy should be applied to all subscriptions from the associated management group.
 - As part of the deployment process, Azure Resource Management templates for the resource group should be stored in source control.
@@ -126,7 +126,7 @@ At this point, a **Cloud Native** pattern to logging and reporting is suggested 
 - No governance requirements have been set regarding the data to be collected for logging or reporting purposes.
 - Additional analysis will be needed before releasing any protected data or mission-critical workloads.
 
-### Evolution of governance processes
+## Evolution of governance processes
 
 As governance evolves, some policy statements can’t or shouldn’t be controlled by automated tooling. Other policies will result in effort by the IT Security team and the on-premises Identity Management team over time. To help mitigate new risks as they arise, the Cloud Governance team will oversee the following processes.
 
@@ -144,20 +144,20 @@ As governance evolves, some policy statements can’t or shouldn’t be controll
 
 If any of the patterns selected in this governance journey don't align with the reader's requirements, alternatives to each pattern are available:
 
-- Subscription model: Alternatives to the **Application Category** pattern are available [here](../../../infrastructure/subscriptions/overview.md).
-- Resource Consistency: Alternatives to the **Deployment Consistency** pattern are available [here](../../../infrastructure/resource-grouping/overview.md).
-- Resource Tagging: Alternatives to the **Classification** pattern are available [here](../../../infrastructure/resource-tagging/overview.md).
-- Identity: Alternatives to the **Directory Synchronization** pattern are available [here](../../../infrastructure/identity/overview.md).
-- Software Defined Network: Alternatives to the **Cloud Native** pattern are available [here](../../../infrastructure/software-defined-networks/overview.md).
-- Encryption: Alternatives to the **Cloud Native** pattern are available [here](../../../infrastructure/encryption/overview.md).
-- Log & Reporting: Alternatives to the **Cloud Native** pattern are available [here](../../../infrastructure/log-and-reporting/overview.md).
-- Enforcement Automation: Alternatives to the **Policy Enforcement** pattern are available [here](../../../infrastructure/policy-enforcement/overview.md).
+- [Encryption patterns](../../../infrastructure/encryption/overview.md)
+- [Identity patterns](../../../infrastructure/identity/overview.md)
+- [Logging and Reporting patterns](../../../infrastructure/logs-and-reporting/overview.md)
+- [Policy Enforcement patterns](../../../infrastructure/policy-enforcement/overview.md)
+- [Resource Grouping patterns](../../../infrastructure/resource-grouping/overview.md)
+- [Resource Tagging patterns](../../../infrastructure/resource-tagging/overview.md)
+- [Software Defined Network patterns](../../../infrastructure/software-defined-networks/overview.md)
+- [Subscription Design patterns](../../../infrastructure/subscriptions/overview.md)
 
 ## Next steps
 
-Once this guide is implemented, the Cloud Adoption team can go forth with a sound governance foundation. The Cloud Governance team will work in parallel to continuously update the corporate policies and governance disciplines. 
+Once this guide is implemented, the Cloud Adoption team can go forth with a sound governance foundation. The Cloud Governance team will work in parallel to continuously update the corporate policies and governance disciplines.
 
-The two teams will use the tolerance indicators to identify the next evolution needed to continue supporting cloud adoption. For the fictitious company in this journey, the next step is evolving this governance baseline to [support moving protected data to the cloud](./protected-data.md).
+The two teams will use the tolerance indicators to identify the next evolution needed to continue supporting cloud adoption. For the fictitious company in this journey, the next step is evolving the Security Baseline to support moving protected data to the cloud.
 
 > [!div class="nextstepaction"]
-> [Security baseline evolution](./protected-data.md)
+> [Security Baseline evolution](./protected-data.md)

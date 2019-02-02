@@ -10,7 +10,7 @@ ms.date: 2/1/2019
 The following corporate policy defines an initial governance position, which is the starting point for this journey. This article defines early-stage risks, initial policy statements, and early processes to enforce policy statements.
 
 > [!NOTE]
->The corporate policy is not a technical document, but it drives many technical decisions. The governance MVP described in the [overview](./overview.md) ultimately derives from this policy. Before implementing a governance MVP, your organization should develop a corporate policy based on your own objectives and business risks.
+>The corporate policy is not a technical document, but it drives many technical decisions. The governance minimum viable product (MVP) described in the [overview](./overview.md) ultimately derives from this policy. Before implementing a governance MVP, your organization should develop a corporate policy based on your own objectives and business risks.
 
 ## Cloud Governance team
 
@@ -24,7 +24,7 @@ The initial objective is to establish a foundation for governance agility. An ef
 
 The company is at an early stage of cloud adoption, experimenting and building proofs of concept. Risks are now relatively low, but future risks are likely. There is little definition around the final state of the technical solutions to be deployed to the cloud. In addition, the cloud readiness of IT employees is low. A foundation for cloud adoption will help the team safely learn and grow.
 
-**Business Risk**: There is a risk of not empowering growth, but also a risk of not providing the right protections against future risks.
+**Business risk**: There is a risk of not empowering growth, but also a risk of not providing the right protections against future risks.
 
 An agile yet robust governance approach is needed to support the board’s vision for corporate and technical growth. Failure to implement such a strategy will slow technical growth, potentially risking market share growth and future market share. The impact of such a business risk is unquestionably high. However, the role IT will play in those potential future states is unknown, making the risk associated with current IT efforts relatively high. That said, until more concrete plans are aligned, the business has a high tolerance for risk.
 
@@ -50,29 +50,30 @@ The current tolerance for risk is high and the appetite for investing in cloud g
 
 The following policy statements establish the requirements needed to mitigate the defined risks. These policies define the functional requirements for the governance MVP. Each will be represented in the implementation of the governance MVP. 
 
-Deployment Acceleration: 
+Deployment Acceleration:
 
 - All assets must be grouped and tagged according to defined grouping and tagging strategies.
 - All assets must use an approved deployment model.
 - Once a governance foundation has been established for a cloud provider, any deployment tooling must be compatible with the tools defined by the governance team.
 
-Identity Baseline: 
+Identity Baseline:
 
 - All assets deployed to the cloud should be controlled using identities and roles approved by current governance policies.
 - All groups in the on-premises Active Directory infrastructure that have elevated privileges should be mapped to an approved RBAC role.
 
-Security Baseline: 
+Security Baseline:
 
 - Any asset deployed to the cloud must have an approved data classification.
 - No assets identified with a protected level of data may be deployed to the cloud, until sufficient requirements for security and governance can be approved and implemented.
 - Until minimum network security requirements can be validated and governed, cloud environments are seen as a demilitarized zone and should meet similar connection requirements to other data centers or internal networks.
 
-Cost Management: 
+Cost Management:
 
 - For tracking purposes, all assets must be assigned to an application owner within one of the core business functions.
 - When cost concerns arise, additional governance requirements will be established with the Finance team.
 
-Resource Consistency: 
+Resource Consistency:
+
 - Because no mission-critical workloads are deployed at this stage, there are no SLA, performance, or BCDR requirements to be governed.
 - When mission-critical workloads are deployed, additional governance requirements will be established with IT operations.
 
@@ -85,7 +86,7 @@ No budget has been allocated for ongoing monitoring and enforcement of these gov
 
 ## Next steps
 
-This corporate policy prepares the cloud governance team to implement the governance MVP, which will be the foundation for adoption. For more information, read [Governance MVP design](./governance-mvp.md).
+This corporate policy prepares the cloud governance team to implement the governance MVP, which will be the foundation for adoption. The next step is to implement this MVP.
 
 > [!div class="nextstepaction"]
 > [Implement the Governance MVP](./governance-mvp.md)
