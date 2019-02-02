@@ -2,7 +2,7 @@
 
 The implementation of the governance MVP has dependencies on Identity, Security, and Networking. Once the dependencies are resolved, the Cloud Governance team will decide a few aspects of governance. The decisions from the Cloud Governance team and from supporting teams will be implemented through a single package of enforcement assets.
 
-![Example of Incremental Governance MVP](./media/governance-mvp-implementation-flow.png)
+![Example of Incremental Governance MVP](media/governance-mvp-implementation-flow.png)
 
 This implementation can also be described using a simple checklist:
 
