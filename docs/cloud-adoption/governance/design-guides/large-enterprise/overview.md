@@ -56,7 +56,7 @@ In the MVP, practices and tools from the [Deployment Acceleration](../../configu
 
 ![Example of Incremental Governance MVP](../../../_images/governance/governance-mvp.png)
 
-### Evolving the best practice
+## Evolving the best practice
 
 Over time, this governance MVP will be used to evolve the governance practices. As adoption advances, business risk grows. Various disciplines within the Fusion Governance Model will evolve to mitigate those risks. Later articles in this series discuss the evolution of corporate policy affecting the fictional company. These evolutions happen across three disciplines: 
 

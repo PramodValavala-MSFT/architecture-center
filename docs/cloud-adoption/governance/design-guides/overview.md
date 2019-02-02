@@ -79,7 +79,7 @@ To begin a governance journey, choose one of the two options below. The options 
 | IT budget                                  | Single IT budget                                                                                        | Budget allocated across business units                                                                         |
 | IT investments                             | Capital expense (CapEx)-driven investments are planned yearly and usually cover only basic maintenance. | CapEx-driven investments are planned yearly and often include maintenance and a refresh cycle of 3 to 5 years. |
 
-## Current State before adopting cloud governance
+### Current state before adopting cloud governance
 
 |                                             | Small-to-medium enterprise                                                                               | Large enterprise                                                                                                          |
 |---------------------------------------------|----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
@@ -98,6 +98,8 @@ To begin a governance journey, choose one of the two options below. The options 
 These two journeys represent two extremes of experience for customers who invest in cloud governance. Most companies reflect a combination of the two scenarios above. After reviewing the journey, use the Fusion Governance Model to start the governance conversation and modify the baseline journeys to more closely meet your needs.
 
 ## Next steps
+
+Choose one of these journeys:
 
 > [!div class="nextstepaction"]
 > [Small-to-medium enterprise governance journey](./small-to-medium-enterprise/overview.md)

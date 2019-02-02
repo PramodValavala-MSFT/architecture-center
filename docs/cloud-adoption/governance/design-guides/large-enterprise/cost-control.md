@@ -9,7 +9,7 @@ ms.date: 2/1/2019
 
 This article evolves the narrative by adding cost controls to the governance minimum viable product (MVP).
 
-## Evolution of the Narrative
+## Evolution of the narrative
 
 Adoption has grown beyond the tolerance indicator defined in the Governance MVP. The increases in spending now justifies an investment of time from the Cloud Governance team to monitor and control spending patterns.
 
@@ -50,7 +50,7 @@ The following changes to policy will help mitigate the new risks and guide imple
 5. During deployment planning, any required cloud resources associated with the hosting of production workloads should be documented. This documentation will help refine budgets and prepare additional automations to prevent the use of more expensive options. During this process consideration should be given to different discounting tools offered by the cloud provider, such as Reserved Instances or License cost reductions.
 6. All application owners are required to attend trained on practices for optimizing workloads to better control cloud costs.
 
-## Evolution of the Best Practices
+## Evolution of the best practices
 
 This section of the article will evolve the Governance MVP design to include new Azure Policies and an implementation of Azure Cost Management. Together, these two design changes will fulfill the new corporate policy statements.
 

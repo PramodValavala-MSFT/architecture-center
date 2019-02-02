@@ -87,7 +87,7 @@ Some of the policy statements cannot or should not be controlled by automated to
 
 **Quarterly Policy Review**: Each quarter, the Cloud Governance team and Cloud Strategy team to review audit results and suggest changes to corporate policy. Many of those suggestions are the result of continuous improvements and the observation of usage patterns. Approved policy changes are integrated into governance tooling during subsequent audit cycles.
 
-## Alternative Patterns
+## Alternative patterns
 
 If any of the patterns selected in this governance journey don't align with the reader's requirements, alternatives to each pattern are available:
 
