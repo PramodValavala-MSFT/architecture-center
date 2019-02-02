@@ -7,7 +7,7 @@ ms.date: 2/1/2019
 
 # Fusion: Large Enterprise – Cost management evolution
 
-This article will evolve the narrative by adding cost controls to the Governance MVP. 
+This article evolves the narrative by adding cost controls to the governance minimum viable product (MVP).
 
 ## Evolution of the Narrative
 
@@ -17,6 +17,10 @@ As a clear driver of innovation, IT is no longer seen primarily as a cost center
 
 ### Evolution of Current State
 
+In the previous phase of this narrative, the IT team was actively moving production workloads with protected data into Azure.
+
+Since then, some things have changed that will affect governance:
+
 - 5,000 assets have been removed from the two datacenters flagged for retirement. Procurement and IT security are now deprovisioning the remaining physical assets.
 - The application development teams have implemented CI/CD pipelines to deploy a number of cloud native applications, significantly impacting customer experiences.
 - The BI team has created aggregation, curation, insight, and prediction processes driving tangible impacts for business operations. Those predictions are now empowering creative new products and services.
@@ -25,11 +29,7 @@ As a clear driver of innovation, IT is no longer seen primarily as a cost center
 
 - Cost monitoring and reporting is to be added to the cloud solution. Reporting should tie direct operational expenses to the functions that are consuming the cloud costs. Additional reporting should allow IT to monitor spend and provide technical guidance on cost management. For the Canadian branch, the department will be billed directly.
 
-## Corporate Policy
-
-The changes to current and future state expose new risks that will require new policy statements.
-
-### Evolution of Tangible Risks
+## Evolution of tangible risks
 
 **Cost Increases**: There is an inherent risk that self-service capabilities will result in excessive and unexpected costs on the new platform. Governance processes for monitoring costs and mitigating on-going cost risks must be in place to ensure continued alignment with the planned budget.
 
@@ -39,7 +39,7 @@ This business risk can be expanded into a few technical risks
 - Business conditions change. When they do, there will be cases when a business function needs to consume more cloud services than expected. There is a risk that these additional costs would be seen as overages as opposed to a required adjustment to the plan. The Canadian experiment should help mitigate this risk, if successful.
 - There is a risk of systems being over-provisioned resulting in excess spending
 
-### Evolution of the Policy Statements
+## Evolution of the policy statements
 
 The following changes to policy will help mitigate the new risks and guide implementation.
 
@@ -54,17 +54,14 @@ The following changes to policy will help mitigate the new risks and guide imple
 
 This section of the article will evolve the Governance MVP design to include new Azure Policies and an implementation of Azure Cost Management. Together, these two design changes will fulfill the new corporate policy statements.
 
-### Best Practice Additions
-
 1. Changes in the Azure Enterprise Portal to bill the Department administrator for the Canadian deployment.
-2. Implement Azure Cost Management
-    1. Establish the right level of access scope to align with the subscription pattern and resource grouping pattern. 
-        1. Assuming alignment with the Governance MVP defined in prior articles, this would require **Enrollment Account Scope** access for the Cloud Governance team executing on high level reporting. Additional teams outside of governance, like the Canadian procurement team, will require **Resource Group Scope access**.
-    2. Establish a budget in Azure Cost Management
-    3. Review and Act on initial recommendations (recurring process suggested to support reporting process)
-    4. Configure and execute Azure Cost Management Reporting (Both initial and recurring)
-3. Update Azure Policy 
-    1. Audit tagging, management group, subscription, and resource group values to identify any deviation
+2. Implement Azure Cost Management.
+    1. Establish the right level of access scope to align with the subscription pattern and resource grouping pattern. Assuming alignment with the Governance MVP defined in prior articles, this would require **Enrollment Account Scope** access for the Cloud Governance team executing on high level reporting. Additional teams outside of governance, like the Canadian procurement team, will require **Resource Group Scope access**.
+    2. Establish a budget in Azure Cost Management.
+    3. Review and act on initial recommendations. It's recommend to have a recurring process to support the reporting process.
+    4. Configure and execute Azure Cost Management Reporting, both initial and recurring.
+3. Update Azure Policy.
+    1. Audit tagging, management group, subscription, and resource group values to identify any deviation.
     2. Establish SKU size options to limit deployments to SKUs listed in deployment planning documentation.
 
 ## Conclusion
@@ -73,7 +70,7 @@ The addition of the above processes and changes to the Governance MVP help to mi
 
 ## Next Steps
 
-As cloud adoption continues to evolve and deliver additional business value, risks and cloud governance needs will also evolve. For the fictitious company in this journey, the next step is using this governance investment to [manage multiple clouds](./multi-cloud.md).
+As cloud adoption continues to evolve and deliver additional business value, risks and cloud governance needs will also evolve. For the fictitious company in this journey, the next step is using this governance investment to manage multiple clouds.
 
 > [!div class="nextstepaction"]
 > [Multi-cloud evolution](./multi-cloud.md)

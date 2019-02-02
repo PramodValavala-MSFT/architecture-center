@@ -32,27 +32,7 @@ This implementation can also be described using a simple checklist:
 3. Determine the appropriate governance patterns for the Resource Consistency, Resource Tagging, and Loging and Reporting disciplines.
 4. Implement the governance tools aligned to the chosen policy enforcement pattern to apply the dependent decisions and governance decisions.
 
-[!INCLUDE [implementation-processp](../../../../../includes/cloud-adoption/governance/implementation-process.md)]
-
-## Policy enforcement
-
-The first decision to make regarding Deployment Acceleration is the pattern for enforcement. In this narrative, the governance team decided to implement the **Automated Enforcement** pattern.
-
-- Azure Security Center will be made available to the security and identity teams to monitor security risks. Both teams are also likely to use Security Center to identify new risks and evolve corporate policy.
-- RBAC is required in all subscriptions to govern authentication enforcement.
-- Azure Policy will be published to each Management Group and applied to all subscriptions. However, the level of policies being enforced will be very limited in this initial Governance MVP.
-- Although Azure Management Groups are being used, a relatively simple hierarchy is expected.
-- Azure Blueprints will be used to deploy and update subscriptions by applying RBAC requirements, Resource Manager Templates, and Azure Policy across Azure Management Groups.
-
-## Applying the dependent patterns
-
-The following decisions represent the patterns to be enforced through the policy enforcement strategy above:
-
-**Identity Baseline**. Azure Blueprints will set RBAC requirements at a subscription level to ensure that consistent identity is configured for all subscriptions.
-
-**Security Baseline: Networking**. The Cloud Governance team maintains a Resource Manager template for establishing a VPN gateway between Azure and the on-prem VPN device. When an application team requires a VPN connection, the Cloud Governance team will apply the gateway Resource Manager template via Azure Blueprints.
-
-**Security Baseline: Encryption**. At this point in the journey, no policy enforcement is required in this area. This will be revisited during later evolutions. 
+[!INCLUDE [implementation-process](../../../../../includes/cloud-adoption/governance/implementation-process.md)]
 
 ## Application of governance-defined patterns
 
@@ -62,7 +42,7 @@ The Cloud Governance team will be responsible for the following decisions and im
 
 The **Application Category** pattern has been chosen for Azure subscriptions.
 
-- An application archetype is a way to group applications with similar needs. Common examples include: Applications with protected data, governed apps (such as HIPAA or FedRamp), low- risk applications, applications with on-premises dependencies, SAP or other Mainframes in Azure, or applications that extend on-premises SAP or mainframes. These archetypes are unique per organization, based on data classifications and the types of applications that power the business. Dependency mapping of the digital estate can aid in defining the application archetypes in an organization.
+- An application archetype is a way to group applications with similar needs. Common examples include: Applications with protected data, governed applications (such as HIPAA or FedRamp), low- risk applications, applications with on-premises dependencies, SAP or other mainframes in Azure, or applications that extend on-premises SAP or mainframes. These archetypes are unique per organization, based on data classifications and the types of applications that power the business. Dependency mapping of the digital estate can aid in defining the application archetypes in an organization.
 - Departments are not likely to be required given the current focus. Deployments are expected to be constrained within a single billing unit. At the stage of adoption, there may not even be an enterprise agreement to centralize billing. It's very likely that this level of adoption is being managed by a single "Pay as you go" Azure subscription.
 - Regardless of the use of the EA Portal or the existence of an enterprise agreement, a subscription model should still be defined and agreed upon to minimize administrative overheard beyond just billing.
 - In the **Application Category** pattern, subscriptions are created for each application archetype. Each subscription belongs to an account per environment (Development, Test, and Production).
@@ -81,6 +61,7 @@ The **Deployment Consistency** pattern has been chosen as a resource consistency
 ### Resource tagging
 
 The **Classification** pattern to tagging has been chosen as a model for resource tagging.
+
 - Deployed assets should be tagged with the following values: Data Classification, Criticality, SLA, and Environment.
 - These four values will drive governance, operations, and security decisions.
 - If this governance journey is being implemented for a business unit or team within a larger corporation, tagging should also include metadata for the billing unit.
