@@ -1,16 +1,8 @@
-## Governance MVP (Cloud Adoption Foundation)
-
-Rapid adoption of governance and corporate policy is achievable, thanks to a few simple principles and cloud-based governance tooling. These are the first of the three Cloud Governance Disciplines to approach in any governance process. Each will be expanded upon in this article.
-
-To establish the starting point, this article will discuss the high-level strategies behind Identity Baseline, Security Baseline, and Deployment Acceleration that are required to create a Governance MVP, which will serve as the foundation for all adoption.
-
-![Example of Incremental Governance MVP](../../../_images/governance/governance-mvp.png)
-
 ## Implementation process
 
 The implementation of the governance MVP has dependencies on Identity, Security, and Networking. Once the dependencies are resolved, the Cloud Governance team will decide a few aspects of governance. The decisions from the Cloud Governance team and from supporting teams will be implemented through a single package of enforcement assets.
 
-![Example of Incremental Governance MVP](../../../docs/cloud-adoption/_images/governance/governance-mvp-implementation-flow.png)
+![Example of Incremental Governance MVP](./media/governance-mvp-implementation-flow.png)
 
 This implementation can also be described using a simple checklist:
 

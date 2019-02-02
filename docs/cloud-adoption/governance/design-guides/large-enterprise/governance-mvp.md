@@ -11,6 +11,14 @@ The following outlines the implementation of the initial Corporate Policies for 
 
 The core of this governance MVP is the [Deployment Acceleration](../../configuration-management/overview.md) discipline. The tools and patterns applied at this stage will enable the incremental evolutions needed to expand governance in the future.
 
+## Governance MVP (Cloud Adoption Foundation)
+
+Rapid adoption of governance and corporate policy is achievable, thanks to a few simple principles and cloud-based governance tooling. These are the first of the three Cloud Governance Disciplines to approach in any governance process. Each will be expanded upon in this article.
+
+To establish the starting point, this article will discuss the high-level strategies behind Identity Baseline, Security Baseline, and Deployment Acceleration that are required to create a Governance MVP, which will serve as the foundation for all adoption.
+
+![Example of Incremental Governance MVP](../../../_images/governance/media/governance-mvp.png)
+
 [!INCLUDE [governance-mvp](../../../../../includes/cloud-adoption/governance/governance-mvp.md)]
 
 ## Policy enforcement
