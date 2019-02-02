@@ -17,9 +17,9 @@ Rapid adoption of governance and corporate policy is achievable, thanks to a few
 
 To establish the starting point, this article will discuss the high-level strategies behind Identity Baseline, Security Baseline, and Deployment Acceleration that are required to create a Governance MVP, which will serve as the foundation for all adoption.
 
-![Example of Incremental Governance MVP](../../../_images/governance/media/governance-mvp.png)
+![Example of Incremental Governance MVP](../../../_images/governance/governance-mvp.png)
 
-[!INCLUDE [governance-mvp](../../../../../includes/cloud-adoption/governance/governance-mvp.md)]
+[!INCLUDE [implementation-processp](../../../../../includes/cloud-adoption/governance/implementation-process.md)]
 
 ## Policy enforcement
 
