@@ -20,9 +20,9 @@ As a quick starting point, this overview defines a governance minimum viable pro
 
 This best practice serves as a foundation that an organization can use to quickly and consistently add governance guardrails across multiple Azure subscriptions.
 
-### Resource Organization
+### Resource organization
 
-The following diagram shows the Governance MVP hierarchy for organizing resources. 
+The following diagram shows the Governance MVP hierarchy for organizing resources.
 
 ![Resource Organization diagram](../../../_images/governance/resource-organization.png)
 
@@ -39,6 +39,7 @@ Here is an example of this pattern in use:
 
 These patterns provide room for growth without complicating the hierarchy unnecessarily.
 
+<!-- include-->
 ### Governance of resources
 
 Enforcing governance across subscriptions will come from Azure Blueprints and the associated assets within the blueprint.
